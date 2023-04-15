@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-n-$bq7go_bf^+&8j)@m4_ilhb6e7x0zizbo((ll#$9i!hd7c45
 # os.environ.get('SECRET_KEY', '25348726kj5du30')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 #'RENDER' not in os.environ
 
 ALLOWED_HOSTS = ['*']
@@ -146,9 +146,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 
-#if not DEBUG:
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+    
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
