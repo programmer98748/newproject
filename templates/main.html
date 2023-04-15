@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Zay Shop - Product Listing Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="{% static "img/apple-icon.png" %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "img/favicon.ico" %}">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/templatemo.css" %}">
+    <link rel="stylesheet" href="{% static "css/custom.css" %}">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <!--  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+
+    <!-- fa fa- -->
+    <link rel="stylesheet" href="{% static "css/fontawesome.min.css" %}">
+
+    <!-- alertify -->
+    <link rel="stylesheet" href="{% static "css/alertify.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/default.min.css" %}">
+<!--
+    
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+
+<style>
+    *{
+        font-family: sans-serif;
+    }
+    a{
+        text-decoration: none;
+    }
+    .products-viewtag{
+        background-color: red;
+        color: #fff;
+        font-size: 11px;
+        line-height: 1;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top: 22px;
+        margin-left: 17.5rem;
+        padding: 7px 10px;
+        font-weight: 600;
+        min-width: 45px;
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    {% include "store/inc/navbar.html" %}
+    {% block body %}
+      
+    {% endblock body %}
+    
+    <!-- footer 
+    {% include "store/inc/footer.html" %} -->
+
+    <!-- Start Script -->
+
+    <!-- jquery button -->
+    <script src="{% static "js/jquery-1.11.0.min.js" %}"></script>
+    <script src="{% static "js/jquery-migrate-1.2.1.min.js" %}"></script>
+
+    <!-- bootstrap -->
+    <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+    <script src="{% static "js/templatemo.js" %}"></script>
+
+    <!-- cutomer -->
+    <script src="{% static "js/custom.js" %}"></script>
+    <!-- alertify -->
+    <script src="{% static "js/alertify.min.js" %}"></script>
+
+    <script>
+        
+        alertify.set('notifier','position', 'top-right');
+        {% for msg in messages %}
+            alertify.success('{{ msg }}');
+        {% endfor %}
+        
+    </script>
+</body>
+
+</html>
